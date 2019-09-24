@@ -14,9 +14,9 @@
 		<p:outputLabel id="tries" value="#{guessBean.tries}" /> <br/>
 		<p:outputLabel id="status" value="#{guessBean.status}" />  <br/>
 		<p:outputLabel id="prize" value="#{guessBean.prize}" />  <br/>
-		<p:commandButton value="guess" update="guess_form" actionListener="#{guessBean.guess(input.value)}" />
-		<p:commandButton value="restart" update="guess_form" actionListener="#{guessBean.restart()}" />
-                <p:dataTable var="listOfTries" value="#{guessBean.tryNumbers}">
+		<p:commandButton value="Guess" update="guess_form" actionListener="#{guessBean.guess(input.value)}" />
+		<p:commandButton value="Restart" update="guess_form" actionListener="#{guessBean.restart()}" />
+                <p:dataTable var="list Of Tries" value="#{guessBean.tryNumbers}">
                     <p:column headerText="listTries">
                         <h:outputText value="#{listOfTries}" />
                     </p:column>
