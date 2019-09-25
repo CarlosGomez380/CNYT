@@ -4,21 +4,40 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>  
-<title>User Form</title>  
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<title>User Form</title> 
+<style>
+h1{color:blue ;text-align:center; font-family: "Times New Roman", Times, serif; font-size:100%;line-height:0.5}
+
+body {background-color: lightblue;}
+</style>
 </h:head>
 
 <h:body>
-	<h:form id="guess_form">
-		<p:outputLabel id="number" value="#{guessBean.number}" style="display:none" />  
-		<p:inputText id="txt" binding="#{input}"/> <br/>
-		<p:outputLabel id="tries" value="#{guessBean.tries}" /> <br/>
-		<p:outputLabel id="status" value="#{guessBean.status}" />  <br/>
-		<p:outputLabel id="prize" value="#{guessBean.prize}" />  <br/>
-		<p:commandButton value="Guess" update="guess_form" actionListener="#{guessBean.guess(input.value)}" />
-		<p:commandButton value="Restart" update="guess_form" actionListener="#{guessBean.restart()}" />
-                <p:dataTable var="list Of Tries" value="#{guessBean.tryNumbers}">
-                    <p:column headerText="listTries">
-                        <h:outputText value="#{listOfTries}" />
+	<i class="fas fa-cloud"></i>
+	<h:form id="guess_form" style="text-align: center">
+		<p:outputLabel id="number" value="#{guessBean.number}" style="display:none" /> 
+
+		<h1>Insert number to guess : 
+		<p:inputText id="txt" binding="#{input}" style= "width: 4%; height: 4%" /> <br/> </h1>
+
+		<h1> Number of tries : 
+		<p:outputLabel id="tries" value="#{guessBean.tries}" style= "text-align:center; font-family: Times New Roman, Times, serif" /> </h1>
+
+		<h1> State :
+		<p:outputLabel id="status" value="#{guessBean.status}" style= "text-align:center; text-transform: capitalize; font-family: Times New Roman, Times, serif" />  <br/></h1>
+
+		<h1> Score so far : 
+		<p:outputLabel id="prize" value="#{guessBean.prize}" style= "text-align:center; text-transform: capitalize; font-family: Times New Roman, Times, serif" />  <br/></h1>
+
+		<p:commandButton value="Guess" update="guess_form" actionListener="#{guessBean.guess(input.value)}"  style= "font-family: Times New Roman, Times, serif" />
+
+		<p:commandButton value="Restart" update="guess_form" actionListener="#{guessBean.restart()}" style= "font-family: Times New Roman, Times, serif" />
+
+                <p:dataTable var="listOfTries" value="#{guessBean.tryNumbers}" style="margin-left:auto; margin-right:auto;width: 20%">
+                    <p:column headerText="List of Tries" style="text-align:center">
+                        <h:outputText value="#{listOfTries}" style= "font-family: Times New Roman, Times, serif" />
                     </p:column>
                 </p:dataTable>
  	</h:form>

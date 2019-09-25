@@ -30,8 +30,6 @@ public class BackBeanSession{
     }
     
     public void guess(int numberGuess){
-        System.out.println(number);
-        System.out.println(numberGuess);
         if (numberGuess == number){
             status = "has won";
             
